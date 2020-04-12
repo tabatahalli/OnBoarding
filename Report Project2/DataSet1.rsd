@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>Keys</DataSourceReference>
+      <DataSetParameters>
+        <DataSetParameter Name="@PropertyId">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>false</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:UserDefined>true</rd:UserDefined>
+          <rd:DbType>Int32</rd:DbType>
+        </DataSetParameter>
+      </DataSetParameters>
+      <CommandText>SELECT      Property.Id as PropertyId, Property.Name as PropertyName, TenantProperty.PaymentAmount, 
+			TenantProperty.StartDate, TenantProperty.EndDate,
+			OwnerProperty.OwnerId, Person.FirstName as OwnerFirstName, Person.LastName as OwnerLastName, 
+			Address.Number, Address.Street, Address.Suburb, 
+			Address.Region, Address.PostCode, Property.Description, Property.Bedroom, 
+			Property.ParkingSpace
+FROM            Property INNER JOIN
+                         OwnerProperty ON Property.Id = OwnerProperty.PropertyId INNER JOIN
+                         Person ON OwnerProperty.OwnerId = Person.Id INNER JOIN
+                         Address ON Property.AddressId = Address.AddressId INNER JOIN
+                         TenantProperty ON Property.Id = TenantProperty.PropertyId
+WHERE        (OwnerProperty.PropertyId = @PropertyId)</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="PropertyId">
+        <DataField>PropertyId</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="PropertyName">
+        <DataField>PropertyName</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="PaymentAmount">
+        <DataField>PaymentAmount</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+      <Field Name="StartDate">
+        <DataField>StartDate</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="OwnerId">
+        <DataField>OwnerId</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="EndDate">
+        <DataField>EndDate</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="OwnerFirstName">
+        <DataField>OwnerFirstName</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Number">
+        <DataField>Number</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="OwnerLastName">
+        <DataField>OwnerLastName</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Street">
+        <DataField>Street</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Suburb">
+        <DataField>Suburb</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Region">
+        <DataField>Region</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="PostCode">
+        <DataField>PostCode</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Description">
+        <DataField>Description</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Bedroom">
+        <DataField>Bedroom</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="ParkingSpace">
+        <DataField>ParkingSpace</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

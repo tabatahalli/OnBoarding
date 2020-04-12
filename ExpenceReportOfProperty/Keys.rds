@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Keys">
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=mvpstudio.cdvkl5vm8weq.ap-southeast-2.rds.amazonaws.com;Initial Catalog=Keys</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>0d088b8d-05dc-42d8-aec4-74a24cecc8e9</DataSourceID>
+</RptDataSource>

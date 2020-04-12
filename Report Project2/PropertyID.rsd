@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet2">
+    <Query>
+      <DataSourceReference>Keys</DataSourceReference>
+      <CommandText>SELECT 
+       Property.Id as PropertyId
+
+FROM  OwnerProperty INNER JOIN
+	  Owners ON OwnerProperty.OwnerId = Owners.Id INNER JOIN
+	  Property ON OwnerProperty.PropertyId = Property.Id
+
+where Owners.Id = 1426</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="PropertyId">
+        <DataField>PropertyId</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>
