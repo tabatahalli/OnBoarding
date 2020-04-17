@@ -12,8 +12,8 @@
     <TargetDatasetFolder>Datasets</TargetDatasetFolder>
     <TargetDatasourceFolder>Data Sources</TargetDatasourceFolder>
     <TargetReportPartFolder>Report Parts</TargetReportPartFolder>
-    <TargetServerURL>http://mvpstudio.cdvkl5vm8weq.ap-southeast-2.rds.amazonaws.com/ReportServer</TargetServerURL>
-    <StartItem>Report1.rdl</StartItem>
+    <TargetServerURL>http://bhooniwebpc/ReportServer</TargetServerURL>
+    <StartItem>ExpenseReport.rdl</StartItem>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'DebugLocal' ">
     <FullPath>DebugLocal</FullPath>
